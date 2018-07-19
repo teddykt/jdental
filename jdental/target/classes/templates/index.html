@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: common-header"/>
+    <link rel="stylesheet" href="../../css/index.css">
+       <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    
+        <link rel="stylesheet" href="css/icon-font.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/logo-white-h.png">
+            
+        <title>jDental</title>
+ </head>
+ <body>
+        <header class="header">
+            <div class="header__logo-box">
+                <img src="img/logo.png" alt="Logo" class="header__logo">
+            </div>
+
+            <div class="header__text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary--main">jDENTAL</span>
+                    <span class="heading-primary--sub">makes you smile</span>
+                </h1>
+            </div>
+        </header>
+
+        <main>
+                <section class="section-features" id="section-features">
+                        <div class="row">
+                        	<div class="col-1-of-4">
+                                    <a href="#popup" class="popup__link" style="text-decoration: none">
+                                    <div class="feature-box">
+                                        <i class="feature-box__icon icon-basic-star"></i>
+                                        <h3 class="heading-tertiary u-margin-bottom-small">공지사항</h3>
+                                    </div>
+                                    </a>
+                                </div>
+            
+                                <div class="col-1-of-4">
+                                    <a href="#popup" class="popup__link" style="text-decoration: none">
+                                    <div class="feature-box">
+                                        <i class="feature-box__icon icon-basic-compass"></i>
+                                        <h3 class="heading-tertiary u-margin-bottom-small">오시는 길</h3>
+                                    </div>
+                                    </a>
+                                </div>
+            
+                                <div class="col-1-of-4">
+                                    <a href="#popup" class="popup__link" style="text-decoration: none">
+                                    <div class="feature-box">
+                                        <i class="feature-box__icon icon-basic-question"></i>
+                                        <h3 class="heading-tertiary u-margin-bottom-small">고객상담</h3>
+                                    </div>
+                                    </a>
+                                </div>
+            
+                                <div class="col-1-of-4">
+                                    <a href="#popup" class="popup__link" style="text-decoration: none">
+                                    <div class="feature-box">
+                                        <i class="feature-box__icon icon-basic-tablet"></i>
+                                        <h3 class="heading-tertiary u-margin-bottom-small">Contact us</h3>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                </section>    
+                
+                <section class="section-book" id="section-book">
+                        <div class="row">
+                            <div class="book">
+                                <div class="book__form">
+                                    <form action="#" class="form">
+                                        <div class="u-margin-bottom-medium">
+                                            <h2 class="heading-secondary">
+                                                Start booking now
+                                            </h2>
+                                        </div>
+
+                                        <div class="form__group">
+                                                <label for="name" class="form__label">First name</label>
+                                                <input type="text" class="form__input" placeholder="First Name" id="name" required>
+                                                
+                                            </div>
+                                        <div class="form__group">
+                                            <label for="name" class="form__label">Last name</label>
+                                            <input type="text" class="form__input" placeholder="Last Name" id="name" required>
+                                            
+                                        </div>
+
+                                        <div class="form__group">
+                                            <label for="text" class="form__label">Phone number</label>
+                                            <input type="text" class="form__input" placeholder="Phone number" id="email" required>
+                                                
+                                        </div>
+        
+                                        <div class="form__group">
+                                            <label for="email" class="form__label">Email address</label>
+                                            <input type="email" class="form__input" placeholder="Email address" id="email" required>
+                                                
+                                        </div>
+        
+                                        <div class="form__group">
+                                            <button class="btn btn--green">Book &rarr;</button>
+                                        </div>
+        
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </section>
+
+        </main>
+
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <div class="popup__left">
+                    <img src="img/smile.png" alt="smile photo" class="popup__img">
+                
+                </div>
+                <div class="popup__right">
+                    <a href="#section-features" class="popup__close">&times;</a>
+                </div>
+            </div>
+        </div>
+    
+        <img class="img-responsive" src="/images/banner.png" alt="banner"/>
+    <div class="container">
+        <div class="row ">
+            <div class="main-center ">
+                <div class="bg-danger" th:if="${param.error}">
+                    Invalid username and secret.
+                </div>
+                <div class="bg-danger" th:if="${param.logout}">
+                    You have been logged out.
+                </div>
+                <form class="form-signin" th:action="@{/index}" method="post">
+                    <h2 class="form-signin-heading">Please sign in</h2>
+                    <div class="form-group">
+                        <label for="username" class="sr-only">Username</label>
+                        <input type="text" roleId="username" class="form-control" placeholder="Username" name="username"
+                               id="username"
+                               required="required" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="sr-only">Password</label>
+                        <input type="password" roleId="inputPassword" class="form-control" placeholder="Password"
+                               id="password"
+                               name="password" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="remember-me" id="remember-me"/> &nbsp; Remember me
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                </form>
+                
+                <hr />
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group ">
+    	<a type="submit" class="btn btn-info btn-lg btn-block login-button" th:href="@{/signup}">Sign up!</a>
+    </div>
+    </div>
+    
+		<div th:replace="common/header :: body-bottom-scripts"/>
+</body>
+    
+</html>

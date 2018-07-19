@@ -1,0 +1,8 @@
+<div>
+  <ul>
+      <li [style.display]="getDisplay()"><a routerLink="/users" routerLinkActive="active"> User Accounts</a></li>
+      <li [style.display]="getDisplay()"><a routerLink="/appointments" routerLinkActive="active"> Appointments</a></li>
+
+      <li [style.display]="getDisplay()"><a (click)="logout()">Logout</a></li>
+  </ul>
+</div>
