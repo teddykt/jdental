@@ -73,7 +73,7 @@ body ::selection {
 
 .header {
   height: 65vh;
-  background-color: linear-gradient(to right bottom, #fcfcfc, rgba(84, 190, 223, 0.842)), url(../../img/.JPG);
+  background-image: linear-gradient(to right bottom, #fcfcfc, rgba(84, 190, 223, 0.842)), url(../../img/image.JPG);
   background-size: cover;
   background-position: top;
   position: relative;

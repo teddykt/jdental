@@ -99,11 +99,11 @@ body{
 
 .header{
     height: 65vh;
-    background-color: linear-gradient(
+    background-image: linear-gradient(
         to right bottom, 
         $color-primary-light, 
         $color-primary-dark), 
-        url(../../img/.JPG); 
+        url(../../img/image.JPG); 
     background-size: cover; 
     background-position: top;
     position: relative; 
@@ -127,7 +127,7 @@ body{
         transform: translate(-50%, -50%); 
         text-align: center;
     }
-
+    
     &__login{
         border: 2px solid $color-primary-light;
         background-color:$color-primary-2;
