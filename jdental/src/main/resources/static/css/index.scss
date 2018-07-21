@@ -2,6 +2,7 @@ $color-primary: rgb(61, 183, 240);
 $color-primary-2: rgba(38, 155, 209, 0.74);
 $color-primary-light: rgb(252, 252, 252);
 $color-primary-dark: rgba(84, 190, 223, 0.842);
+$color-primary-topnav: rgb(29, 157, 216);
 
 $color-grey-dark: #777;
 $color-grey-dark-2: #999;
@@ -63,6 +64,37 @@ body{
         background-color: $color-primary; 
         color: $color-white;
     }
+}
+
+.topnav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $color-primary-topnav;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.topnav a{
+    display: block;
+    color: $color-white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: left;
+
+    &:hover{
+        background-color: $color-primary-light;
+        color: $color-grey-dark;
+    }
+}
+
+.topnav-right{
+    float: right;
 }
 
 .header{

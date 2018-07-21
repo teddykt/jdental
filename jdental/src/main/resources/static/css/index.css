@@ -41,6 +41,36 @@ body ::selection {
   color: #fff;
 }
 
+.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1d9dd8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.topnav a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  float: left;
+}
+.topnav a:hover {
+  background-color: #fcfcfc;
+  color: #777;
+}
+
+.topnav-right {
+  float: right;
+}
+
 .header {
   height: 65vh;
   background-image: linear-gradient(to right bottom, #fcfcfc, rgba(84, 190, 223, 0.842)), url(../../img/.JPG);

@@ -28,9 +28,9 @@ public class AppointmentServiceImpl implements AppointmentService{
 			return appointmentDao.findAll();
 		}
 		
-		public Appointment findAppointment(Long id) {
-			return appointmentDao.findOne(id);
-		}
+		// public Appointment findAppointment(Long id) {
+		// 	return appointmentDao.findOne(id);
+		// }
 		
 		public void confirmAppointment(Long id) {
 			Appointment appointment = findAppointment(id);
@@ -43,5 +43,10 @@ public class AppointmentServiceImpl implements AppointmentService{
 			List<Appointment> appointmentList = user.getAppointmentList();
 			
 			return appointmentList;
+		}
+
+		@Override
+		public Appointment findAppointment(Long id) {
+			return null;
 		}
 }
