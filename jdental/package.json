@@ -10,6 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.9.2"
+  },
+  "dependencies": {
+    "timekit-booking": "^2.0.2"
   }
-  
 }
