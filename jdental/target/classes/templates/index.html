@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="common/header :: common-header"/>
     <link rel="stylesheet" href="../../css/index.css">
+    <head th:replace="common/header :: common-header">
        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             
@@ -10,10 +10,11 @@
         <link rel="stylesheet" href="css/icon-font.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" type="image/png" href="img/logo-white-h.png">
+        
             
         <title>jDental</title>
- </head>
- <body>
+    </head>
+    <body>
         <header class="header">
             <div class="header__logo-box">
                 <img src="img/logo.png" alt="Logo" class="header__logo">
@@ -25,12 +26,49 @@
                     <span class="heading-primary--sub">makes you smile</span>
                 </h1>
             </div>
+
+        <!-- login section -->
+        <!-- <img class="img-responsive" src="/images/banner.png" alt="banner"/> -->
+        <div class="header__login">
+            <div class="row ">
+                <div class="main-center ">
+                    <div class="bg-danger" th:if="${param.error}">
+                        Invalid username and secret.
+                    </div>
+                    <div class="bg-danger" th:if="${param.logout}">
+                        You have been logged out.
+                    </div>
+                    <form class="form-signin" th:action="@{/index}" method="post">
+                        <h2 class="form-signin-heading">Please sign in</h2>
+                        <div class="form-group">
+                            <label for="username" class="sr-only">Username</label>
+                            <input type="text" roleId="username" class="form-control" placeholder="Username" name="username"
+                                id="username"
+                                required="required" autofocus="autofocus"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Password</label>
+                            <input type="password" roleId="inputPassword" class="form-control" placeholder="Password"
+                                id="password"
+                                name="password" required="required"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="remember-me" id="remember-me"/> &nbsp; Remember me
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <div th:replace="common/header :: body-bottom-scripts"/>
+    <!-- login section end -->
         </header>
 
         <main>
                 <section class="section-features" id="section-features">
                         <div class="row">
-                        	<div class="col-1-of-4">
+                                <div class="col-1-of-4">
                                     <a href="#popup" class="popup__link" style="text-decoration: none">
                                     <div class="feature-box">
                                         <i class="feature-box__icon icon-basic-star"></i>
@@ -126,48 +164,6 @@
                 </div>
             </div>
         </div>
-    
-        <img class="img-responsive" src="/images/banner.png" alt="banner"/>
-    <div class="container">
-        <div class="row ">
-            <div class="main-center ">
-                <div class="bg-danger" th:if="${param.error}">
-                    Invalid username and secret.
-                </div>
-                <div class="bg-danger" th:if="${param.logout}">
-                    You have been logged out.
-                </div>
-                <form class="form-signin" th:action="@{/index}" method="post">
-                    <h2 class="form-signin-heading">Please sign in</h2>
-                    <div class="form-group">
-                        <label for="username" class="sr-only">Username</label>
-                        <input type="text" roleId="username" class="form-control" placeholder="Username" name="username"
-                               id="username"
-                               required="required" autofocus="autofocus"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="sr-only">Password</label>
-                        <input type="password" roleId="inputPassword" class="form-control" placeholder="Password"
-                               id="password"
-                               name="password" required="required"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" name="remember-me" id="remember-me"/> &nbsp; Remember me
-                    </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                </form>
-                
-                <hr />
-            </div>
-        </div>
-    </div>
-    
-    <div class="form-group ">
-    	<a type="submit" class="btn btn-info btn-lg btn-block login-button" th:href="@{/signup}">Sign up!</a>
-    </div>
-    </div>
-    
-		<div th:replace="common/header :: body-bottom-scripts"/>
-</body>
-    
+        
+    </body>
 </html>
