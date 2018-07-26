@@ -34,10 +34,10 @@
 	
 	
 	<!-- editing profile, backside of card -->
-	
+	<div class="card card__side card__side--back">
 	<form method="post" th:action="@{/user/profile}">
                 <input type="hidden" name="id" th:value="${user.userId}"/>
-                <div class="card card__side card__side--back">
+                
 	                <div class="form-group">
 	                    <label for="firstName">First Name</label>
 	                    <div class="cols-sm-10">
@@ -98,7 +98,7 @@
 	                        </div>
 	                    </div>
 	                </div>
-	            </div>
+	          
 				
                 <div class="form-group ">
                     <button type="submit" class="btn btn-primary btn-block ">Change Profile</button>

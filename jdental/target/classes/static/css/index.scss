@@ -343,17 +343,14 @@ body{
 }
 
 .card{
-
-    position: relative;
-    height: 52rem;
     
     &__side{
   		height: 52rem; 
         position: absolute;
         top: 20%;
-        left: 10%;
-        width: 100%; 
-        border: 0.8rem solid $color-primary-dark;
+        left: 40%;
+        width: 100;
+        
 	
 		&--front{
 			margin-top: 6.5rem;
@@ -363,7 +360,7 @@ body{
 			text-transform: uppercase;
 			
 			table{
-				
+				border: 0.8rem solid $color-primary-dark;
 			
 			}
 		
