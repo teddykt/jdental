@@ -103,7 +103,7 @@ body{
         to right bottom, 
         $color-primary-light, 
         $color-primary-dark), 
-        url(../../img/.JPG); 
+        url(../../img/image.JPG); 
     background-size: cover; 
     background-position: top;
     position: relative; 
@@ -122,10 +122,20 @@ body{
     
     &__text-box{
         position: absolute; 
-        top: 40%;
-        left: 50%;
+        top: 50%;
+        left: 40%;
         transform: translate(-50%, -50%); 
         text-align: center;
+    }
+    
+    &__login{
+        border: 2px solid $color-primary-light;
+        background-color:$color-primary-2;
+        color:$color-primary-light;
+        padding: 2rem;
+        position: absolute;
+        top: 20%;
+        left: 70%;
     }
 }
 

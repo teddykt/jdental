@@ -36,6 +36,13 @@ public class HomeController {
 		public String index() {
 			return "index";
 		}		
+						
+		
+		@RequestMapping("/booking")
+		public String booking() {
+			return "booking";
+
+		}	
 		
 		@RequestMapping(value = "/signup", method = RequestMethod.GET)
 		public String signup(Model model) {
@@ -73,6 +80,6 @@ public class HomeController {
 				
 				return "userMain";
 				
-			}
+		}	
 		
 }
