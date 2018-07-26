@@ -342,4 +342,13 @@ body{
     }
 }
 
+table{
+	border: 1px solid $color-primary-dark;
+	}
+
+.card{
+	&--front{
+		}
+	}
+		
 
