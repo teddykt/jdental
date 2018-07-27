@@ -43,6 +43,12 @@ public class HomeController {
 			return "booking";
 
 		}	
+
+		@RequestMapping("/login")
+		public String login() {
+			return "login";
+
+		}	
 		
 		@RequestMapping(value = "/signup", method = RequestMethod.GET)
 		public String signup(Model model) {
