@@ -73,7 +73,7 @@ body ::selection {
 
 .header {
   height: 65vh;
-  background-image: linear-gradient(to right bottom, #fcfcfc, rgba(84, 190, 223, 0.842)), url(../../img/.JPG);
+  background-image: linear-gradient(to right bottom, #fcfcfc, rgba(84, 190, 223, 0.842)), url(../../img/image.JPG);
   background-size: cover;
   background-position: top;
   position: relative;
@@ -88,10 +88,19 @@ body ::selection {
 }
 .header__text-box {
   position: absolute;
-  top: 40%;
-  left: 50%;
+  top: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+.header__login {
+  border: 2px solid #fcfcfc;
+  background-color: rgba(38, 155, 209, 0.74);
+  color: #fcfcfc;
+  padding: 2rem;
+  position: absolute;
+  top: 20%;
+  left: 70%;
 }
 
 .heading-primary {
@@ -250,7 +259,7 @@ body ::selection {
 }
 
 .book {
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(38, 155, 209, 0.74) 50%), url(../img/smile.jpg);
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(38, 155, 209, 0.74) 50%), url(../images/smile.png);
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
@@ -258,6 +267,30 @@ body ::selection {
 .book__form {
   width: 50%;
   padding: 6rem;
+}
+
+.card__side {
+  height: 52rem;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 100%;
+}
+.card__side--front {
+  font-size: 4rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+.card__side--front table {
+  border: 0.8rem solid rgba(84, 190, 223, 0.842);
+}
+.card__side--front td {
+  padding: 1.5rem;
+  spacing: 1.5rem;
+  text-align: left;
+  font-size: 1.7rem;
+  text-transform: none;
 }
 
 /*# sourceMappingURL=index.css.map */
