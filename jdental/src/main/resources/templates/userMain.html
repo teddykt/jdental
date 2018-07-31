@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="../css/userMain1.css">
+<link rel="stylesheet" href="/css/userMain.css">
 <head th:replace="common/header :: common-header"/>
 <body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <head th:replace="common/header :: navbar"/>
@@ -162,8 +162,13 @@
 	} );
 
 </script>
-<script src="flip.js"></script>
+<script>
+	var card = document.getElementById('card');
 
+	document.getElementById('flip').addEventListener('click', function() {
+		card.classList.toggle('flipped');
+	}, false);
+</script>
 </body>
 </html>
 
