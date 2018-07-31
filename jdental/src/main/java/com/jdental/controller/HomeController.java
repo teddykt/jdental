@@ -40,7 +40,7 @@ public class HomeController {
 		
 		@RequestMapping("/booking")
 		public String booking() {
-			return "booking";
+			return "st/booking";
 
 		}	
 
