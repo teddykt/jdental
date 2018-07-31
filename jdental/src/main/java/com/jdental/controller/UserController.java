@@ -13,7 +13,6 @@ import com.jdental.domain.User;
 import com.jdental.service.UserService;
 
 @Controller
-@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -25,7 +24,7 @@ public class UserController {
 
         model.addAttribute("user", user);
 
-        return "profile";
+        return "userMain";
     }
 
     @RequestMapping(value = "/userMain", method = RequestMethod.POST)
@@ -41,7 +40,7 @@ public class UserController {
 
         userService.saveUser(user);
 
-        return "profile";
+        return "userMain";
     }
 
 

@@ -42,7 +42,7 @@
 
 		<!-- editing profile, backside of card -->
 			<figure class="back">
-				<form method="post" th:action="@{/user/profile}">
+				<form method="post" th:action="@{/userMain}">
 					<input type="hidden" name="id" th:value="${user.userId}"/>
 					
 						<div class="form-group">
@@ -106,10 +106,7 @@
 							</div>
 						</div>
 		
-						
-				
-					
-					<div class="form-group ">
+					<div class="form-group">
 						<button type="submit" class="button button--change">Change Profile</button>
 					</div>
 					
