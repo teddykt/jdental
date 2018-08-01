@@ -48,6 +48,12 @@ public class HomeController {
 		public String login() {
 			return "login";
 
+		}
+
+		@RequestMapping("/ss")
+		public String ss() {
+			return "ss";
+
 		}	
 		
 		@RequestMapping(value = "/signup", method = RequestMethod.GET)

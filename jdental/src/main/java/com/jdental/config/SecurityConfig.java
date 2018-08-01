@@ -48,7 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/booking",
             "/ea",
             "/login",
-            "/index"
+            "/index",
+            "/ss"
     };
 
     @Override
