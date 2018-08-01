@@ -1,48 +1,15 @@
-.u-margin-bottom-small {
-  margin-bottom: 1.5rem !important;
-}
-
-.row {
-  max-width: 114rem;
-  margin: 0 auto;
-}
-.row:not(:last-child) {
-  margin-bottom: 8rem;
-}
-.row [class^=col-] {
-  float: left;
-}
-.row [class^=col-]:not(:last-child) {
-  margin-right: 6rem;
-}
-
-.col-1-of-2 {
-  width: calc((100% - 6rem) / 2);
-}
-
-.col-1-of-4 {
-  width: calc((100% - 3 * 6rem) / 4);
-}
-
-.row {
-  max-width: 114rem;
-  margin: 0 auto;
-}
-.row:not(:last-child) {
-  margin-bottom: 8rem;
-}
-
 h1 {
   text-transform: uppercase;
 }
 
 #card {
   position: relative;
+  top: 6rem;
   transform-style: preserve-3d;
   perspective: 150rem;
   -moz-perspective: 150rem;
   height: 35rem;
-  width: 100%;
+  width: 25rem;
   border: 0.5rem solid #3db7f0;
   border-radius: 2rem;
   padding: 1.5rem 2rem;
@@ -54,9 +21,9 @@ h1 {
 
 #card figure {
   margin: 0;
-  display: block;
+  display: inline-block;
   position: absolute;
-  top: 1rem;
+  top: 0.5rem;
   right: 0;
   width: 100%;
   height: 100%;
@@ -88,10 +55,9 @@ h1 {
 .button--primary {
   background-color: #fff;
   border: 2px solid #3db7f0;
-  display: block;
   position: relative;
   top: 10rem;
-  left: 50%;
+  left: 25%;
 }
 .button--primary:hover {
   background-color: #3db7f0;
@@ -143,6 +109,11 @@ h1 {
 .button--change:active {
   box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.2);
   transform: translateY(4px);
+}
+
+.description {
+  position: absolute;
+  top: 45rem;
 }
 
 /*# sourceMappingURL=userMain.css.map */
