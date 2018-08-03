@@ -5,10 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    
-        
-        
-            
+
         <title>jDental</title>
     </head>
     
@@ -117,43 +114,32 @@
                     <a th:href="@{/booking}">book</a>
         </main>
 
-        <div class="cd-intro">
-                <h1>Login/Signup Modal Window</h1>
-                <div class="cd-nugget-info">
-                    <a href="http://codyhouse.co/gem/loginsignup-modal-window/">
-                        <span>
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-                                <style type="text/css">
-                                    .cd-nugget-info-arrow{fill:#383838;}
-                                </style>
-                                <polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
-                            </svg>
-                        </span>
-                        Article &amp; Download
-                    </a>
-                </div> <!-- cd-nugget-info -->
-            </div>
-        
-            <div class="cd-signin-modal js-signin-modal"> <!-- this is the entire modal form, including the background -->
-                <div class="cd-signin-modal__container"> <!-- this is the container wrapper -->
+        <!-- start ss modal -->
+            <div class="cd-signin-modal js-signin-modal"> 
+                <!-- header -->
+                <div class="cd-signin-modal__container"> 
                     <ul class="cd-signin-modal__switcher js-signin-modal-switcher js-signin-modal-trigger">
                         <li><a href="#0" data-signin="login" data-type="login">Sign in</a></li>
-                        <li><a href="#0" data-signin="signup" data-type="signup">New account</a></li>
+                        <li><a href="#signupForm" data-signin="signup" data-type="signup">New account</a></li>
                     </ul>
-        
-                    <div class="cd-signin-modal__block js-signin-modal-block" data-type="login"> <!-- log in form -->
-                        <form class="cd-signin-modal__form">
+
+                <!-- start signin -->
+                    <div class="cd-signin-modal__block js-signin-modal-block" data-type="login"> 
+                        <form class="cd-signin-modal__form"  th:action="@{/index}" method="post">
+                            
                             <p class="cd-signin-modal__fieldset">
-                                <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signin-email">E-mail</label>
-                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="signin-email" type="email" placeholder="E-mail">
-                                <span class="cd-signin-modal__error">Error message here!</span>
+                                    <span th:if="${param.error}">Wrong username or password. please try again!</span>
+                            </p>
+
+                            <p class="cd-signin-modal__fieldset">
+                                <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signin-email">Username</label>
+                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="username" name="username" type="text" placeholder="Username">
                             </p>
         
                             <p class="cd-signin-modal__fieldset">
                                 <label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="signin-password">Password</label>
-                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="signin-password" type="text"  placeholder="Password">
+                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="password" name="password" type="text"  placeholder="Password">
                                 <a href="#0" class="cd-signin-modal__hide-password js-hide-password">Hide</a>
-                                <span class="cd-signin-modal__error">Error message here!</span>
                             </p>
         
                             <p class="cd-signin-modal__fieldset">
@@ -167,27 +153,46 @@
                         </form>
                         
                         <p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="reset">Forgot your password?</a></p>
-                    </div> <!-- cd-signin-modal__block -->
-        
-                    <div class="cd-signin-modal__block js-signin-modal-block" data-type="signup"> <!-- sign up form -->
-                        <form class="cd-signin-modal__form">
+                    </div> 
+                <!-- end of signin -->
+
+                <!-- start signup -->
+                    <div id="signupForm" class="cd-signin-modal__block js-signin-modal-block" data-type="signup">
+                        <form class="cd-signin-modal__form"  th:action="@{/signup}" method="post">
                             <p class="cd-signin-modal__fieldset">
                                 <label class="cd-signin-modal__label cd-signin-modal__label--username cd-signin-modal__label--image-replace" for="signup-username">Username</label>
-                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="signup-username" type="text" placeholder="Username">
-                                <span class="cd-signin-modal__error">Error message here!</span>
+                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.username}"  roleId="username" id="username" name="username" type="text" placeholder="Username">
+                                <span class="cd-signin-modal__error">Invalid username please try again!</span>
                             </p>
-        
-                            <p class="cd-signin-modal__fieldset">
-                                <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signup-email">E-mail</label>
-                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="signup-email" type="email" placeholder="E-mail">
-                                <span class="cd-signin-modal__error">Error message here!</span>
-                            </p>
-        
+
                             <p class="cd-signin-modal__fieldset">
                                 <label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="signup-password">Password</label>
-                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="signup-password" type="text"  placeholder="Password">
+                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.password}"  roleId="password" id="password" name="password" type="text"  placeholder="Password">
                                 <a href="#0" class="cd-signin-modal__hide-password js-hide-password">Hide</a>
-                                <span class="cd-signin-modal__error">Error message here!</span>
+                            </p>  
+
+                            <p class="cd-signin-modal__fieldset">
+                                    <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signup-email">E-mail</label>
+                                    <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.email}"  roleId="email"  id="email" name="email" type="email" placeholder="E-mail">
+                                    <span class="cd-signin-modal__error">Invalid email format please try again!</span>
+                            </p>
+
+                            <p class="cd-signin-modal__fieldset">
+                                <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signup-phone">Phone</label>
+                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.phone}" id="phone" name="phone" type="text" placeholder="phone">
+                                <span class="cd-signin-modal__error">Invalid email format please try again!</span>
+                            </p>
+
+                            <p class="cd-signin-modal__fieldset">
+                                    <label class="cd-signin-modal__label cd-signin-modal__label--username cd-signin-modal__label--image-replace" for="signup-firstName">First Name</label>
+                                    <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.firstName}" id="firstName" name="firstName" type="text" placeholder="First Name">
+                                    <span class="cd-signin-modal__error">Invalid username please try again!</span>
+                            </p>
+            
+                            <p class="cd-signin-modal__fieldset">
+                                    <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signup-lastName">Last Name</label>
+                                    <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.lastName}" id="lastName" name="lastName" type="text" placeholder="Last Name">
+                                    <span class="cd-signin-modal__error">Invalid email format please try again!</span>
                             </p>
         
                             <p class="cd-signin-modal__fieldset">
@@ -199,9 +204,11 @@
                                 <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding" type="submit" value="Create account">
                             </p>
                         </form>
-                    </div> <!-- cd-signin-modal__block -->
-        
-                    <div class="cd-signin-modal__block js-signin-modal-block" data-type="reset"> <!-- reset password form -->
+                    </div> 
+                <!-- end signup -->
+
+                <!-- start rest password -->
+                    <div class="cd-signin-modal__block js-signin-modal-block" data-type="reset"> 
                         <p class="cd-signin-modal__message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
         
                         <form class="cd-signin-modal__form">
@@ -217,15 +224,18 @@
                         </form>
         
                         <p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="login">Back to log-in</a></p>
-                    </div> <!-- cd-signin-modal__block -->
+                    </div> 
+                <!-- end reset password-->
                     <a href="#0" class="cd-signin-modal__close js-close">Close</a>
-                </div> <!-- cd-signin-modal__container -->
-            </div> <!-- cd-signin-modal -->
-        <script src="/js/ss/placeholders.min.js"></script> <!-- polyfill for the HTML5 placeholder attribute -->
-        <script src="/js/ss/main.js"></script> <!-- Resource JavaScript -->        
+                </div> 
+            </div>
+        <!-- end ss modal -->
 
+        <!-- ss JavaScript -->  
+        <script src="/js/ss/placeholders.min.js"></script>
+        <script src="/js/ss/main.js"></script>      
 
-
+        <!-- start menubox popup -->
         <div class="popup" id="popup">
             <div class="popup__content">
                 <div class="popup__left">
@@ -237,6 +247,6 @@
                 </div>
             </div>
         </div>
-        
+        <!-- end menubox popup -->
     </body>
 </html>

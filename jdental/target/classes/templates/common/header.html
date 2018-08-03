@@ -18,7 +18,7 @@
     <link href="/js/jquery.dataTable.min.css" rel="stylesheet" />
     <link href="/js/dataTables.bootstrap.min.css" rel="stylesheet" />
 
-    <link href="/css/index.css" rel="stylesheet" />
+    <link href="/css/mycss/index.css" rel="stylesheet" />
 
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 
@@ -36,10 +36,11 @@
 	            <a th:href="@{/appointment}">Appointment</a>
 	            <a th:href="@{/userMain}">My Profile</a>
 	            <div class="topnav-right">
-                    <span sec:authorize="!isAuthenticated()">			<ul class="cd-main-nav__list js-signin-modal-trigger">
-                            <!-- inser more links here -->
+                    <span sec:authorize="!isAuthenticated()">			
+                        <ul class="cd-main-nav__list js-signin-modal-trigger">
+                            <!-- insert more links here -->
                             <li><a class="cd-main-nav__item cd-main-nav__item--signin" href="#0" data-signin="login">Sign in</a></li>
-                            <li><a class="cd-main-nav__item cd-main-nav__item--signup" href="#0" data-signin="signup">Sign up</a></li>
+                            <li><a class="cd-main-nav__item cd-main-nav__item--signup" href="#signupForm" data-signin="signup">Sign up</a></li>
                         </ul>
                     </span>
                     <span sec:authorize="isAuthenticated()">

@@ -48,20 +48,14 @@ public class HomeController {
 		public String login() {
 			return "login";
 
-		}
-
-		@RequestMapping("/ss")
-		public String ss() {
-			return "ss";
-
 		}	
 		
-		@RequestMapping(value = "/signup", method = RequestMethod.GET)
+		@RequestMapping(value = "/index", method = RequestMethod.GET)
 		public String signup(Model model) {
 			User user = new User();
 			model.addAttribute("user", user);
 				
-			return "signup";
+			return "index";
 		}
 		
 		@RequestMapping(value = "/signup", method = RequestMethod.POST)
@@ -69,7 +63,7 @@ public class HomeController {
 			if(userService.checkUserExists(user.getUsername(), user.getEmail())) {
 				
 				model.addAttribute("usernameExists", true);
-				return "signup";
+				return "index";
 			}
 			else {
 				Set<UserRole> userRoles = new HashSet<>();
@@ -80,7 +74,7 @@ public class HomeController {
 				return "redirect:/";
 			}
 		}
-		
+
 		@RequestMapping("/userMain") 
 			public String userMain(Principal principal, Model model) {
 				User user = userService.findByUsername(principal.getName());

@@ -23,6 +23,11 @@
 			})(i);
 		}
 
+		if (window.location.href=="http://localhost:8080/index?error") {
+			var self = this;
+			self.showSigninForm('login');
+		}
+
 		//close modal
 		this.element.addEventListener('click', function(event){
 			if( hasClass(event.target, 'js-signin-modal') || hasClass(event.target, 'js-close') ) {
