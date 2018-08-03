@@ -133,12 +133,12 @@
 
                             <p class="cd-signin-modal__fieldset">
                                 <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signin-email">Username</label>
-                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="username" name="username" type="text" placeholder="Username">
+                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  required id="username" name="username" type="text" placeholder="Username">
                             </p>
         
                             <p class="cd-signin-modal__fieldset">
                                 <label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="signin-password">Password</label>
-                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="password" name="password" type="text"  placeholder="Password">
+                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  required id="password" name="password" type="text"  placeholder="Password">
                                 <a href="#0" class="cd-signin-modal__hide-password js-hide-password">Hide</a>
                             </p>
         
@@ -161,37 +161,37 @@
                         <form class="cd-signin-modal__form"  th:action="@{/signup}" method="post">
                             <p class="cd-signin-modal__fieldset">
                                 <label class="cd-signin-modal__label cd-signin-modal__label--username cd-signin-modal__label--image-replace" for="signup-username">Username</label>
-                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.username}"  roleId="username" id="username" name="username" type="text" placeholder="Username">
+                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" th:value="${user.username}" required roleId="username" id="username" name="username" type="text" placeholder="Username">
                                 <span class="cd-signin-modal__error">Invalid username please try again!</span>
                             </p>
 
                             <p class="cd-signin-modal__fieldset">
                                 <label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="signup-password">Password</label>
-                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.password}"  roleId="password" id="password" name="password" type="text"  placeholder="Password">
+                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" th:value="${user.password}" required  roleId="password" id="password" name="password" type="text"  placeholder="Password">
                                 <a href="#0" class="cd-signin-modal__hide-password js-hide-password">Hide</a>
                             </p>  
 
                             <p class="cd-signin-modal__fieldset">
                                     <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signup-email">E-mail</label>
-                                    <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.email}"  roleId="email"  id="email" name="email" type="email" placeholder="E-mail">
+                                    <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.email}" required  roleId="email"  id="email" name="email" type="email" placeholder="E-mail">
                                     <span class="cd-signin-modal__error">Invalid email format please try again!</span>
                             </p>
 
                             <p class="cd-signin-modal__fieldset">
                                 <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signup-phone">Phone</label>
-                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.phone}" id="phone" name="phone" type="text" placeholder="phone">
+                                <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.phone}" required id="phone" name="phone" type="text" placeholder="phone">
                                 <span class="cd-signin-modal__error">Invalid email format please try again!</span>
                             </p>
 
                             <p class="cd-signin-modal__fieldset">
                                     <label class="cd-signin-modal__label cd-signin-modal__label--username cd-signin-modal__label--image-replace" for="signup-firstName">First Name</label>
-                                    <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.firstName}" id="firstName" name="firstName" type="text" placeholder="First Name">
+                                    <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.firstName}" required id="firstName" name="firstName" type="text" placeholder="First Name">
                                     <span class="cd-signin-modal__error">Invalid username please try again!</span>
                             </p>
             
                             <p class="cd-signin-modal__fieldset">
                                     <label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="signup-lastName">Last Name</label>
-                                    <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.lastName}" id="lastName" name="lastName" type="text" placeholder="Last Name">
+                                    <input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"  th:value="${user.lastName}" required id="lastName" name="lastName" type="text" placeholder="Last Name">
                                     <span class="cd-signin-modal__error">Invalid email format please try again!</span>
                             </p>
         
